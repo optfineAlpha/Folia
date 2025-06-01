@@ -26,3 +26,10 @@ jobs:
         run: ./gradlew applyAllPatches --stacktrace	
       - name: Build	
         run: ./gradlew build
+      - name: Upload Artifacts
+      - run: mkdir -p folia-server/build/libs
+      - run: echo hello
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: folia-server/build/libs
